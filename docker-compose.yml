@@ -6,8 +6,8 @@ services:
     container_name: frontend
     ports:
       - "3000:80"
-    volumes:
-      - ./frontend:/app
+    depends_on:
+      - backend
     environment:
       - REACT_APP_API_URL=http://localhost:3001/api
 
@@ -16,13 +16,13 @@ services:
     container_name: backend
     ports:
       - "3001:3001"
-    volumes:
-      - ./backend:/app
+    depends_on:
+      - mongo
     environment:
       - MONGO_URL=mongodb://mongo:27017
 
   mongo:
-    image: mongo:6.0.2
+    image: mongo:6.0
     container_name: mongo
     ports:
       - "27017:27017"
