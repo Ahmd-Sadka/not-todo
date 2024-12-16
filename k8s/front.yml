@@ -20,7 +20,7 @@ spec:
           - containerPort: 3000
         env:
           - name: REACT_APP_API_URL
-            value: http://backend:3001/api
+            value: http://backend:3001
         resources:
           limits:
             memory: "128Mi"
