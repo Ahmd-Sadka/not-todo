@@ -32,5 +32,5 @@ spec:
       volumes:
       - name: mongo-data
         hostPath:
-          path: ~/mongo
+          path: /home/a7md/mongo
           type: DirectoryOrCreate
