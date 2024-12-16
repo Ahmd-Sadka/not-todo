@@ -9,7 +9,7 @@ services:
     volumes:
       - ./frontend:/app
     environment:
-      - REACT_APP_API_URL=http://backend:3001
+      - REACT_APP_API_URL=http://localhost:3001/api
 
   backend:
     build: ./backend
@@ -19,9 +19,9 @@ services:
     volumes:
       - ./backend:/app
     environment:
-      - MONGO_URL=mongodb://db:27017
+      - MONGO_URL=mongodb://mongo:27017
 
-  db:
+  mongo:
     image: mongo:6.0.2
     container_name: mongo
     ports:
